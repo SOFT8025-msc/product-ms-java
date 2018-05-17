@@ -1,16 +1,5 @@
 sudo: true
-
-# install Heroku CLI 
-# (based on https://github.com/travis-ci/apt-package-whitelist/issues/375)
-addons:
-  apt:
-    sources:
-      - heroku
-    packages:
-      - heroku-toolbelt
-env: 
-  global: 
-  - secure: $DEPLOY_KEY     
+     
 language: java
 jdk:
 - oraclejdk8
