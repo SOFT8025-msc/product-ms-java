@@ -11,6 +11,7 @@ import org.soft.assignment.service.StockService;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
@@ -29,18 +30,22 @@ public class StockServiceImplTest {
 
     @Test
     public void list_when_stockExist_then_listOfStockIsReturned() {
-        List<Stock> existingBrands = Arrays.asList(new Stock("prod 1", true, 10), new Stock("prod 2", false, 0));
+        Stock stockItem1 = new Stock("prod 1");
+        stockItem1.setId(UUID.randomUUID().toString());
+
+        Stock stockItem2 = new Stock("prod 1");
+        stockItem2.setId(UUID.randomUUID().toString());
+
+        List<Stock> existingBrands = Arrays.asList(stockItem1, stockItem2);
 
         when(stockRepositoryMock.findAll()).thenReturn(existingBrands);
 
         List<Stock> stocks = stockService.list();
         assertThat(stocks, hasSize(2));
         assertThat(stocks.get(0).getProductId(), is("prod 1"));
-        assertThat(stocks.get(0).getStockCapacity(), is(10));
-        assertThat(stocks.get(0).isInStock(), is(true));
-        assertThat(stocks.get(1).getProductId(), is("prod 2"));
-        assertThat(stocks.get(1).getStockCapacity(), is(0));
-        assertThat(stocks.get(1).isInStock(), is(false));
+        assertThat(stocks.get(0).getId(), is(stockItem1.getId()));
+        assertThat(stocks.get(1).getProductId(), is("prod 1"));
+        assertThat(stocks.get(1).getId(), is(stockItem2.getId()));
 
         verify(stockRepositoryMock).findAll();
     }

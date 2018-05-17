@@ -1,4 +1,6 @@
 package org.soft.assignment.service;
 
-public interface ProductService {
+import org.soft.assignment.model.Product;
+
+public interface ProductService extends ListService<Product>, CreateService<Product>, UpdateService<Product>, DeleteService<Product> {
 }
