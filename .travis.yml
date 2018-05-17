@@ -18,11 +18,9 @@ after_success:
 - "./gradlew build jacocoTestReport coveralls"
 - "./gradlew sonarqube -Dsonar.login=$SONAR_TOKEN -Dsonar.branch.name=$TRAVIS_BRANCH
   -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=$SONAR_ORG"
-  -  wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-  - git remote add heroku git@heroku.com:product-ms-java.git
-  - echo "Host heroku.com" >> ~/.ssh/config
-  - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
-  - echo "   CheckHostIP no" >> ~/.ssh/config
-  - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
-  - yes | heroku keys:add
-  - yes | git push heroku master
+deploy:
+  provider: heroku
+  api_key: $DEPLOY_KEY    
+  app: product-ms-java
+  on:
+    repo: SOFT8025-msc/product-ms-java
