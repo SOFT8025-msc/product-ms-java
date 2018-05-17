@@ -16,6 +16,9 @@ gradlew build && java -jar build/libs/product-ms-java-0.0.1.jar
 # Swagger UI
 `http://localhost:8080/swagger-ui.html`
 
+# Deployed app URL
+https://product-ms-java.herokuapp.com/swagger-ui.html
+
 # Travis CI
 https://travis-ci.com/SOFT8025-msc/product-ms-java
 
