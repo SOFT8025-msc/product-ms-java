@@ -1,4 +1,4 @@
-sudo: false
+sudo: true
 
 # install Heroku CLI 
 # (based on https://github.com/travis-ci/apt-package-whitelist/issues/375)
