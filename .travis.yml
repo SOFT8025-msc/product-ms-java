@@ -6,5 +6,7 @@ after_success:
 - "./gradlew sonarqube -Dsonar.login=$SONAR_TOKEN -Dsonar.branch.name=$TRAVIS_BRANCH
   -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=$SONAR_ORG"
 deploy:
+  provider: heroku
+  app: product-ms-java
   api_key:
     secure: RwxDI4CokEqUT/y9fexBc2WV6sxky5j7kbRfjDqZbpbFcM4HwzL4HqLdXUHmfvNxAh8mvP551E2B1xeJ2qBBdsjFhXBnvuQuTxOoYjA1WDUE86ncLz14zJN5BMnrtqM6sBL8b1FL9R0+CbO09fg3Eu4q6H6niwjiJOir/YDEQ6K+JDhji6jWo/SuR5Akm6cpsSAJQivBw+ykNCwhTKQFWRMDseN5JCz5H4C2P1L80gVmouFROsc+oSgsvjxz8/w18uiUWh0Yqf0j0rmpkrl/x1Ec+qh55N2kuL+TpKSMNCEPLYg5CUNJpyJ8YMsQpyGWhKoEiun47qrsiVl5yAGev3Ctt480MP0F/R2KUzlJq7GKm+bdR+ZjEPyH4Hkf+XwsHtkEY+W/68iQS8z6+f00XcNH/4U5Fmsht7FAKCwwmCm7JQzDxzDyVAc31H1hMxfc6s4qKKliPa9Wie/lEi7i+O3XTImoHTBZuR2GXS3swYnUVab2BVzYK8q6sl8ZUCnWHtS1jzyMJJK/E9wdO1woj5qoViRD3InqWfXuCoGjmtuVLcIc09wNBpU2Rs9NAG5DnKzMWmex767EMMJi1Z60wQ7T92+cpfTN6byy3M0asAFcee/ZuuZhQXnIWAgShKwHzAzeamtTFTtCWUAUalZ3syg8D1j4t2hD8NumbxoQI/o=
