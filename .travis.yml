@@ -7,8 +7,7 @@ after_success:
   -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=$SONAR_ORG"
 deploy:
   provider: heroku
-  api_key:
-    secure: iAPOxe8nW9lj4E+JX49dpZnb948eIQdbUiNO7Rgm1tjin03qn1e1gmtFKBDuyaT07g8jL3HnvUujIPIDiuOtIy5LObWqmBsxps/MraORpcTt38X7ksHte1eXLbpCvtOetWgUPD2nCdUlHlMXCFF0rpzTcvhnwn/oQxf+mBveAT6DW/gGcmi6QPGLEHnA669AXlsI+1MijvJMRyl6SJpEzszwvMAqh/dCEzqMIbC7EGPhr4rFse38pwoeKMbvbxSZ20tJ9RV32hQrzlyLiojzqaGNWHHsawYi5YpqEHyRvU/xHldkoKyp84sWxJrW6EVGd81Q26GcnDLdPSt3gkGLeCzkPMlMyq7lFVtKmVGysstBtlYeVPBN/rttL6ecV0tsBEefVOeyTEcCM00+4riX0Ufg7QhMvaXke70cCiJfrKg0CMwIESVok1Ep9MpK+IMMJeFQ93PR83Fn4spYyBjYluJLvyvavete61cF2u+yQPAk4dM7MNoFSC5w4L3CMKZn5ZQvdXpDqTLOOo2PWUoktphEnieVL+iNThlmIoaf5QdZbIYO20mUulXVrDzeIFWd0+f/wXlDXvdZsb1m8QoW0zNXj0j5Dv7Tyyqo/wVijR1GHQTit7oOVRLxDJR6dJj4YCDnsx0oB1ieBakjxn3NzvZ30yjTafmlO+uu2df2TRY=
+  api_key: $DEPLOY_KEY    
   app: product-ms-java
   on:
     repo: SOFT8025-msc/product-ms-java
