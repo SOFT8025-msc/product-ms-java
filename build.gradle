@@ -20,7 +20,7 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: "jacoco"
 
 bootJar {
-    baseName = 'ms-prototype-java'
+    baseName = 'product-ms-java'
     version =  '0.0.1'
 }
 
