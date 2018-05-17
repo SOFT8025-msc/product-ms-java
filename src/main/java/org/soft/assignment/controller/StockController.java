@@ -22,19 +22,25 @@ public class StockController {
     public List<Stock> getList() {
         return stockService.list();
     }
-//
-//    @RequestMapping(value = "/create", method = RequestMethod.POST)
-//    public Stock create(@RequestBody Stock object) {
-//        return stockService.create(object);
-//    }
-//
-//    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-//    public Stock update(@RequestParam String id, @RequestBody Stock object) {
-//        return stockService.update(object);
-//    }
-//
-//    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-//    public void delete(@RequestParam String id) {
-//        stockService.delete(id);
-//    }
+
+    @RequestMapping(value ="/status/{productId}", method = RequestMethod.GET)
+    public Stock getStockStatus(@RequestParam String productId){
+        return stockService.getStockDetails(productId);
+    }
+
+
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    public Stock create(@RequestBody Stock object) {
+        return stockService.create(object);
+    }
+
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
+    public Stock update(@RequestParam String id, @RequestBody Stock object) {
+        return stockService.update(object);
+    }
+
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    public void delete(@RequestParam String id) {
+        stockService.delete(id);
+    }
 }

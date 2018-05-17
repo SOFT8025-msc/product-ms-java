@@ -5,6 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 @Entity
 public class Stock implements BaseObject{
@@ -14,15 +15,15 @@ public class Stock implements BaseObject{
     protected String id;
 
     private String productId;
+    @Transient
     private boolean inStock;
-    private Integer stockCapacity;
+    @Transient
+    private int stockCapacity;
 
     public Stock(){}
 
-    public Stock(String productId, boolean inStock, Integer stockCapacity){
+    public Stock(String productId){
         this.setProductId(productId);
-        this.setInStock(inStock);
-        this.setStockCapacity(stockCapacity);
     }
     public String getId() {
         return id;
@@ -48,11 +49,11 @@ public class Stock implements BaseObject{
         this.inStock = inStock;
     }
 
-    public Integer getStockCapacity() {
+    public int getStockCapacity() {
         return stockCapacity;
     }
 
-    public void setStockCapacity(Integer stockCapacity) {
+    public void setStockCapacity(int stockCapacity) {
         this.stockCapacity = stockCapacity;
     }
 }
