@@ -1,5 +1,7 @@
 sudo: true
-     
+env:
+-DOMAIN_NAME: product-ms-java
+-EUREKA_URL: https://$EUREKA_USER:$EUREKA_PASSWORD@soft-8025-eureka.herokuapp.com
 language: java
 jdk:
 - oraclejdk8
