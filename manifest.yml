@@ -1,0 +1,5 @@
+name: product-ms-java
+instances: 1
+memory: 1024M
+path: build/libs/product-ms-java-0.0.1.jar
+buildpack: java_buildpack
