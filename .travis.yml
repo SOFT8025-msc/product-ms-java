@@ -19,3 +19,4 @@ deploy:
   space: soft8025
   on:
     repo: SOFT8025-msc/product-ms-java
+    branch: master
