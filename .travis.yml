@@ -10,13 +10,8 @@ after_success:
 - "./gradlew sonarqube -Dsonar.login=$SONAR_TOKEN -Dsonar.branch.name=$TRAVIS_BRANCH
   -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=$SONAR_ORG"
 deploy:
-  provider: cloudfoundry
-  api: https://api.run.pivotal.io
-  username: viciouspetal
-  password:
-    secure: i00dtFTcVL/OHQtGlPeYOb9bGU0fED1ZdsbHvwI/OyGiE+w229aFYl8RfqoE4MDAv2kmN097qsvFNnWMKm6w/2YfAR9j2KUZuJqg5j4B8+WgwVVbjhfQ3ZO2OKtUbbtt+bRXhNO7X5DXdrjK4QL7DqYscgT6CW1cmIHuwekpKxUWjdWs0UzgxbwepJJcyQEeU+dHtoITPpnMS0MYCqP9DL17buGOe6hjmMeZGQG/4ZRbJT5o9J36+uiqGEWgivpprIA9w+lu9QcZjQFfb+ukH/3z5trpipvIC58FCNmp55fyFY0YRzOHUru9twLAjhp1m6/yIaMhVhewgCfsE4issEBr0gJ1NBXYZSnSm2ZG753Uj3ZPatU9iu/QLSR8+I7JVUIov/BIPiRh9GQvD0aD61pweJG1OqKx8PY1X5oBoKOYV1/UKtiukn19rPofwJIpknvqLiH5evLs/2nvRqeiVxAGJqs5z4vHWkwj6+l48ORUIzgpqoE6VHi9MuJSovYHoidoma6dbGWa0b55G2nhhOdiEt1t6HLW4MYKffT5lDdiMOAin2y6dpWV4CGrqyxoIJmV5Io1sh0bkzxk0vfwrYag0FepZ3e42+XYRurDDsSobtXDBrE13VxQycKUc8Vx5Gh+bg1uKD4xdb2U37UZcsI2tZusjEo+6OKw5wmii0E=
-  organization: viciouspetal
-  space: development
+  provider: heroku
+  api_key: $DEPLOY_KEY
+  app: product-ms-java
   on:
     repo: SOFT8025-msc/product-ms-java
-    branch: master
